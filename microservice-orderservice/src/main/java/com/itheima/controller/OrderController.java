@@ -21,7 +21,7 @@ public class OrderController {
 		return  orders;
 	}
 	@GetMapping("/test")
-	public String test(@PathVariable("userid") Integer userid) {
+	public String test() {
 		System.out.println("输出的端口为："+OrderLisener.getPort());
 		return  "okkkkkkkkkkkkkk";
 	}
