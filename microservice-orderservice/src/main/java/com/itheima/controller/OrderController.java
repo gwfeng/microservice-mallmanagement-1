@@ -20,6 +20,11 @@ public class OrderController {
 		List<Order> orders=  this.orderMapper.selectOrder(userid);
 		return  orders;
 	}
+	@GetMapping("/test")
+	public String test(@PathVariable("userid") Integer userid) {
+		System.out.println("输出的端口为："+OrderLisener.getPort());
+		return  "okkkkkkkkkkkkkk";
+	}
 
 	@PostMapping("/insertOrder")
 	public Integer insertOrder(@RequestBody  Order order) {

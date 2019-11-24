@@ -10,29 +10,30 @@ services:
     networks:
       - microservice-net
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: microservice_mallmanagement
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
-      placement:
-        constraints: [node.role == manager]
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: microservice
+#    deploy:
+#      replicas: 1
+#      restart_policy:
+#        condition: on-failure
+#      placement:
+#        constraints: [node.role == manager]
 
   eureka-server:
-    image: 10.16.233.178:5000/microservice-eureka-server:0.0.1-SNAPSHOT
+    image: 10.16.254.47:5000/microservice-eureka-server:0.0.1-SNAPSHOT
     restart: on-failure
     ports:
       - 8761:8761
     networks:
       - microservice-net
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
+#    deploy:
+#      replicas: 1
+#      restart_policy:
+#        condition: on-failure
 
   gateway-zuul:
-    image: 10.16.233.178:5000/microservice-gateway-zuul:0.0.1-SNAPSHOT
+    image: 10.16.254.47:5000/microservice-gateway-zuul:0.0.1-SNAPSHOT
     restart: on-failure
     ports:
       - 8050:8050
@@ -40,15 +41,15 @@ services:
       - microservice-net
     depends_on:
       - eureka-server
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
-      placement:
-        constraints: [node.role == manager]
+#    deploy:
+#      replicas: 1
+#      restart_policy:
+#        condition: on-failure
+#      placement:
+#        constraints: [node.role == manager]
 
   order-service:
-    image: 10.16.233.178:5000/microservice-orderservice:0.0.1-SNAPSHOT
+    image: 10.16.254.47:5000/microservice-orderservice:0.0.1-SNAPSHOT
     restart: on-failure
     ports:
       - 7900:7900
@@ -57,13 +58,13 @@ services:
     depends_on:
       - mysql
       - eureka-server
-    deploy:
-      replicas: 2
-      restart_policy:
-        condition: on-failure
+#    deploy:
+#      replicas: 2
+#      restart_policy:
+#        condition: on-failure
 
   user-service:
-    image: 10.16.233.178:5000/microservice-userservice:0.0.1-SNAPSHOT
+    image: 10.16.254.47:5000/microservice-userservice:0.0.1-SNAPSHOT
     restart: on-failure
     ports:
       - 8030:8030
@@ -72,10 +73,10 @@ services:
     depends_on:
       - mysql
       - eureka-server
-    deploy:
-      replicas: 2
-      restart_policy:
-        condition: on-failure
+#    deploy:
+#      replicas: 2
+#      restart_policy:
+#        condition: on-failure
 
   visualizer:
     image: dockersamples/visualizer:stable
@@ -83,9 +84,9 @@ services:
       - 8081:8080
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    deploy:
-      placement:
-        constraints: [node.role == manager]
+#    deploy:
+#      placement:
+#        constraints: [node.role == manager]
     networks:
       - microservice-net
 

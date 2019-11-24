@@ -34,8 +34,8 @@ zuul:
     ignored-service: '*'
     user-api:
        path: /user-service/**
-       url: http://localhost:8030/
-#       serviceId: user-service
+#       url: http://localhost:8030/
+       serviceId: user-service
     order-api:
        path: /order-service/**
        serviceId: order-service
