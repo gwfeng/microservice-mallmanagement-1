@@ -22,7 +22,7 @@ public class OrderController {
 	}
 	@GetMapping("/test")
 	public String test() {
-		System.out.println("输出的端口为："+OrderLisener.getPort());
+		System.out.println("输出的端口："+OrderLisener.getPort());
 		return  "okkkkkkkkkkkkkk";
 	}
 
