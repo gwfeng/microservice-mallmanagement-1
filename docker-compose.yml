@@ -6,7 +6,7 @@ services:
     ports:
       - 3307:3306
     volumes:
-      - microservice-mysql:/var/lib/mysql
+      - ./microservice/data/mysql:/var/lib/mysql
     networks:
       - microservice-net
     environment:
