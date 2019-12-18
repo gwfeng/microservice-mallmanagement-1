@@ -5,7 +5,7 @@ spring:
 #    url: jdbc:mysql://localhost:3306/microservice_mallmanagement
 #    与Docker整合时可使用以下配置（也可以使用具体的ip+端口）
 #    url: jdbc:mysql://mysql:3306/microservice
-    url: jdbc:mysql://10.16.254.15:3306/microservice
+    url: jdbc:mysql://10.16.254.15:3307/microservice
     username: root
     password: fgw123
   application:
