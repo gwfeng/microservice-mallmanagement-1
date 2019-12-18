@@ -7,7 +7,7 @@ spring:
 #    url: jdbc:mysql://mysql:3306/microservice
     url: jdbc:mysql://10.16.254.15:3306/microservice
     username: root
-    password: 123456
+    password: fgw123
   application:
       name: user-service # 指定应用名称
   cloud:

@@ -11,7 +11,7 @@ services:
       - microservice-net
     environment:
       MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: fgw123
       MYSQL_DATABASE: microservice
 #    deploy:
 #      replicas: 1
