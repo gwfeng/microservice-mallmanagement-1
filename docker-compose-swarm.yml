@@ -8,8 +8,8 @@ services:
     volumes:
       - microservice-mysql:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: microservice_mallmanagement
+      MYSQL_ROOT_PASSWORD: fgw123
+      MYSQL_DATABASE: microservice
     deploy:
       replicas: 1
       restart_policy:
